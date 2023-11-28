@@ -1,12 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Version>0.1.1</Version>
+        <Version>1.0.0</Version>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Nullable>enable</Nullable>
+        <Authors>Erik Kärrsgård</Authors>
+        <Description>Enables using a graphql-endpoint to read typed models from a Optimizely CMS site</Description>
+        <PackageId>vansterhant.Addon.Optimizely.GraphQL</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/vansterhant/Addon.Optimizely.GraphQL</PackageProjectUrl>
+        <PackageTags>Optimizely, cms, graphql</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <DebugType>Portable</DebugType>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <DebugSymbols>true</DebugSymbols>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Deterministic>true</Deterministic>
+        <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">True</ContinuousIntegrationBuild>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,12 +35,14 @@
         <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="13.7.0" />
         <PackageReference Include="HotChocolate.Authorization" Version="13.7.0" />
         <PackageReference Include="HotChocolate.Data" Version="13.7.0" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Addon.Optimizely.GraphQL.Generator\Addon.Optimizely.GraphQL.Generator.csproj" PrivateAssets="all" />
         <!-- Package the generator in the analyzer directory of the nuget package -->
         <None Include="$(OutputPath)\Addon.Optimizely.GraphQL.Generator.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
