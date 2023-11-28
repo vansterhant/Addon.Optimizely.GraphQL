@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Addon.Optimizely.GraphQL.Generator.Sample</RootNamespace>
+        <LangVersion>11</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Addon.Optimizely.GraphQL\Addon.Optimizely.GraphQL.csproj"/>
+        <ProjectReference Include="..\Addon.Optimizely.GraphQL.Generator\Addon.Optimizely.GraphQL.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="EPiServer.CMS" Version="12.23.0"/>
+    </ItemGroup>
+
+</Project>
+  
