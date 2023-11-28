@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{F752F00E-1907-4B17-94E5-0809F4595F21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Addon.Optimizely.GraphQL.Generator", "Addon.Optimizely.GraphQL.Generator\Addon.Optimizely.GraphQL.Generator.csproj", "{03D6C375-6390-4C0E-8525-274A947FA3BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Addon.Optimizely.Optimizely.GraphQL.Generator.Sample", "Addon.Optimizely.GraphQL.Generator.Sample\Addon.Optimizely.GraphQL.Generator.Sample.csproj", "{CDA7EA5A-02F9-43F4-97D2-32A8F2CF7231}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Addon.Optimizely.Optimizely.GraphQL.Generator.Tests", "Addon.Optimizely.GraphQL.Generator.Tests\Addon.Optimizely.GraphQL.Generator.Tests.csproj", "{96EAB82E-9F6C-49F4-8CF4-2820319C6050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Addon.Optimizely.GraphQL", "Addon.Optimizely.GraphQL\Addon.Optimizely.GraphQL.csproj", "{77DF41B7-78D4-4013-AA4E-335D81B5D5CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F752F00E-1907-4B17-94E5-0809F4595F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F752F00E-1907-4B17-94E5-0809F4595F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F752F00E-1907-4B17-94E5-0809F4595F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F752F00E-1907-4B17-94E5-0809F4595F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D6C375-6390-4C0E-8525-274A947FA3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D6C375-6390-4C0E-8525-274A947FA3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D6C375-6390-4C0E-8525-274A947FA3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D6C375-6390-4C0E-8525-274A947FA3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA7EA5A-02F9-43F4-97D2-32A8F2CF7231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA7EA5A-02F9-43F4-97D2-32A8F2CF7231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA7EA5A-02F9-43F4-97D2-32A8F2CF7231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA7EA5A-02F9-43F4-97D2-32A8F2CF7231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96EAB82E-9F6C-49F4-8CF4-2820319C6050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96EAB82E-9F6C-49F4-8CF4-2820319C6050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96EAB82E-9F6C-49F4-8CF4-2820319C6050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96EAB82E-9F6C-49F4-8CF4-2820319C6050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DF41B7-78D4-4013-AA4E-335D81B5D5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DF41B7-78D4-4013-AA4E-335D81B5D5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DF41B7-78D4-4013-AA4E-335D81B5D5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DF41B7-78D4-4013-AA4E-335D81B5D5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

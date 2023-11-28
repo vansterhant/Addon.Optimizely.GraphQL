@@ -1,0 +1,45 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Build, test, and publish Nuget
+
+on:
+  push:
+    branches: [ "main", "release/*" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  BUILD_CONFIGURATION: 'Release'
+  DOTNET_VERSION: '6.0.x'
+  VERSION: '1.0'
+  SUFFIX: '-pre'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+#    - name: Set suffix to env
+#      run: echo "SUFFIX=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+    - name: Restore dependencies
+      run: dotnet restore src/Build.sln
+    - name: Build
+      run: dotnet build src/Build.sln --no-restore --configuration '${{ env.BUILD_CONFIGURATION }}' --p:Version=${{env.VERSION}}.${{github.run_attempt}}${{env.SUFFIX}}
+    - name: Test
+      run: dotnet test src/Build.sln --no-build  --configuration '${{ env.BUILD_CONFIGURATION }}' --verbosity normal
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        path: 'src/Addon.Optimizely.GraphQL/bin/Release/*.*pkg'
+    - name: Publish Nuget
+      if: startsWith(github.ref, 'refs/heads/release')
+      run: |
+        dotnet nuget push Addon.Optimizely.GraphQL/bin/Release/Vansterhant.Addon.Optimizely.GraphQL.${{env.VERSION}}.${{github.run_attempt}}${{env.SUFFIX}}.nupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+        dotnet nuget push Addon.Optimizely.GraphQL/bin/Release/Vansterhant.Addon.Optimizely.GraphQL.${{env.VERSION}}.${{github.run_attempt}}${{env.SUFFIX}}.snupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
