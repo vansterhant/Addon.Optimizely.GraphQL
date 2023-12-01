@@ -7,7 +7,7 @@ This project is a powerful add-on for the Optimizely CMS that enables a GraphQL 
 The project is built using:
 
 - **C#** as the primary programming language.
-- **Hot Chocolate**, a GraphQL server for .NET platforms.
+- **Hot Chocolate**, a GraphQL server library for .NET platforms.
 - **Source Generation**, a feature of the C# compiler that enables compile-time metaprogramming.
 
 ## Features
@@ -40,12 +40,12 @@ public void ConfigureServices(IServiceCollection services)
     });
 }
 ```
-the GraphQL endpoint will now be available at `/graphql`. If one wishes to change the url, a string can be passed argument to the `MapGraphQL` method.
+The GraphQL endpoint will now be available at `/graphql`. If one wishes to change the url, a string can be passed as an argument to the `MapGraphQL` method.
 
 ## Testing it out
-The GraphQL endpoint is now available at `/graphql`. To test it out, navigate to the endpoint in your browser. You should see a GraphQL Playground, which allows you to explore the schema and test queries.  
+Navigate to the endpoint in a browser. You should see a GraphQL playground, which allows you to explore the schema and test queries.  
 
-![GraphQL Playground](./graphql_ui.png)
+![GraphQL Playground](https://github.com/vansterhant/Addon.Optimizely.GraphQL/blob/265230afc3d8f077e39f723d43c58e8c69a23819/graphql_ui.png?raw=true)
 
 ## Contributing
 
