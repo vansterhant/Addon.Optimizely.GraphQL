@@ -31,7 +31,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore src/Build.sln
     - name: Build
-      run: dotnet build src/Build.sln --no-restore --configuration '${{ env.BUILD_CONFIGURATION }}' --p:Version=${{env.VERSION}}.${{github.run_attempt}}${{env.SUFFIX}}
+      run: dotnet build src/Build.sln --no-restore --configuration '${{ env.BUILD_CONFIGURATION }}' --p:Version=${{env.VERSION}}.${{github.run_number}}${{env.SUFFIX}}
     - name: Test
       run: dotnet test src/Build.sln --no-build  --configuration '${{ env.BUILD_CONFIGURATION }}' --verbosity normal
     - name: Upload Artifacts
@@ -41,5 +41,5 @@ jobs:
     - name: Publish Nuget
       if: startsWith(github.ref, 'refs/heads/release')
       run: |
-        dotnet nuget push Addon.Optimizely.GraphQL/bin/Release/Vansterhant.Addon.Optimizely.GraphQL.${{env.VERSION}}.${{github.run_attempt}}${{env.SUFFIX}}.nupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
-        dotnet nuget push Addon.Optimizely.GraphQL/bin/Release/Vansterhant.Addon.Optimizely.GraphQL.${{env.VERSION}}.${{github.run_attempt}}${{env.SUFFIX}}.snupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+        dotnet nuget push src/Addon.Optimizely.GraphQL/bin/Release/Vansterhant.Addon.Optimizely.GraphQL.${{env.VERSION}}.${{github.run_number}}${{env.SUFFIX}}.nupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+        dotnet nuget push src/Addon.Optimizely.GraphQL/bin/Release/Vansterhant.Addon.Optimizely.GraphQL.${{env.VERSION}}.${{github.run_number}}${{env.SUFFIX}}.snupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
